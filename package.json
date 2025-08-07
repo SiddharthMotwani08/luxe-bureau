@@ -1,0 +1,30 @@
+{
+  "name": "luxe-bureau-landing",
+  "version": "1.0.0",
+  "description": "Responsive landing page for The Luxe Bureau - a luxury gift curation service",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch",
+    "build": "npx tailwindcss -i ./styles/input.css -o ./styles/output.css --minify",
+    "serve": "python -m http.server 8000",
+    "preview": "npm run build && npm run serve"
+  },
+  "keywords": [
+    "landing-page",
+    "luxury",
+    "responsive",
+    "tailwindcss",
+    "html",
+    "javascript"
+  ],
+  "author": "The Luxe Bureau",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

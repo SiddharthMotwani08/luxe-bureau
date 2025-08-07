@@ -1,0 +1,240 @@
+---
+alwaysApply: true
+description: "Comprehensive development guidelines for The Luxe Bureau responsive landing page"
+---
+
+# The Luxe Bureau Landing Page - Development Rules
+
+## Project Overview
+Building a pixel-perfect, responsive luxury landing page for The Luxe Bureau using HTML, Tailwind CSS v4, and vanilla JavaScript. Focus on elegant typography, smooth animations, and premium aesthetics.
+
+## Typography System
+
+### Font Loading Strategy
+- Use Google Fonts with appropriate fallbacks
+- Primary fonts: SchoolBook (fallback: serif), Century Old Style Std (fallback: serif), Quadrant Text (fallback: sans-serif), ABC Marfa (fallback: sans-serif)
+- Implement font-display: swap for performance
+- Use system font stack as ultimate fallback
+
+### Typography Specifications
+```css
+/* SchoolBook variants */
+.font-schoolbook {
+  font-family: 'Crimson Text', serif; /* Google Fonts alternative */
+  font-weight: 400;
+  letter-spacing: 5%;
+  line-height: 100%;
+}
+
+/* Century Old Style Std variants */
+.font-century {
+  font-family: 'Cormorant Garamond', serif; /* Google Fonts alternative */
+  font-weight: 400;
+  letter-spacing: 2%;
+  line-height: 40px;
+}
+
+/* Quadrant Text variants */
+.font-quadrant {
+  font-family: 'Inter', sans-serif; /* Google Fonts alternative */
+  font-weight: 400;
+  letter-spacing: 0%;
+}
+
+/* ABC Marfa variants */
+.font-abc-marfa {
+  font-family: 'Montserrat', sans-serif; /* Google Fonts alternative */
+  font-weight: 400;
+  letter-spacing: 10%;
+  text-transform: uppercase;
+}
+```
+
+## Color Palette
+- Primary Background: #FBF7E5
+- Primary Text: #50462D
+- Accent Yellow: #FBD060
+- Border Color: #50462D
+
+## Responsive Design Strategy
+
+### Breakpoint Usage
+- Mobile-first approach using Tailwind's default breakpoints
+- sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px
+- Ensure seamless scaling from mobile (320px) to desktop (1920px+)
+
+### Component Responsive Patterns
+- Hero section: Stack vertically on mobile, horizontal layout on lg+
+- Bento grid: Single column on mobile, 2 cols on md, 4 cols on lg+
+- Typography: Scale font sizes proportionally across breakpoints
+- Carousel: Touch-friendly on mobile, hover states on desktop
+
+## Layout Components
+
+### Header Section
+- Logo placement: centered on mobile, left-aligned on desktop
+- "Coming Soon" text with precise typography
+- Sticky behavior on scroll (optional enhancement)
+
+### Hero Section
+- Central image with overlay text "THE ART OF GIVING"
+- Responsive image scaling maintaining aspect ratio
+- Typography hierarchy with proper line-height and letter-spacing
+
+### Content Sections
+- Quote blocks with proper attribution styling
+- Carousel with navigation arrows and scroll indicators
+- Responsive image galleries with proper aspect ratios
+
+### Bento Grid Layout
+```html
+<!-- Desktop: 3 rows × 4 cols -->
+<!-- Mobile: Single column stack -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-rows-3 gap-4">
+  <!-- 2x2 grid spanning rows 1-2, cols 1-2 -->
+  <!-- Large image spanning rows 1-2, cols 3-4 -->
+  <!-- Three equal images spanning row 3, cols 1-4 -->
+</div>
+```
+
+### Forms
+- Contact form with custom styling
+- Input focus states with brand colors
+- Submit button with hover animations
+- Form validation styling (visual only for now)
+
+### Footer
+- Background image with proper overlay
+- Multi-column layout collapsing to single column on mobile
+- Newsletter signup with inline form
+- Proper link styling with underlines
+
+## Animation & Interaction Guidelines
+
+### Button Animations
+```css
+.btn-primary {
+  background: #FBD060;
+  transition: all 300ms ease-out;
+  animation-timing-function: ease-out;
+  animation-duration: 300ms;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 208, 96, 0.3);
+}
+```
+
+### Carousel Behavior
+- Simple arrow navigation
+- Click indicators for direct navigation
+- Smooth CSS transitions only
+
+### Scroll Animations
+- CSS-only animations and transitions for better performance
+- Smooth scrolling between sections (CSS scroll-behavior)
+
+## Code Organization
+
+### File Structure
+```
+/
+├── index.html              # Main HTML file
+├── styles/
+│   ├── input.css          # Tailwind imports and custom CSS
+│   └── output.css         # Compiled Tailwind CSS
+├── scripts/
+│   └── main.js            # JavaScript functionality
+├── assets/
+│   ├── images/            # Placeholder images
+│   └── icons/             # SVG icons and graphics
+└── .cursor/
+    └── rules/
+        └── luxe-bureau-landing.mdc
+```
+
+### CSS Organization
+- Use Tailwind utility classes for 95% of styling
+- Custom CSS only for complex animations and precise typography
+- Maintain consistent naming conventions
+- Use CSS custom properties for dynamic values
+
+### JavaScript Guidelines
+- Minimal vanilla JavaScript for essential functionality only
+- Simple carousel navigation (arrows and indicators)
+- Basic form submission handling
+- No unnecessary optimizations or complex interactions
+
+## Performance Considerations
+
+### Image Optimization
+- Use modern image formats (WebP with fallbacks)
+- Implement lazy loading for images below the fold
+- Proper alt text for accessibility
+- Responsive image sizing with srcset
+
+### CSS Optimization
+- Use Tailwind CSS purge for production builds
+- Minimize custom CSS
+- Critical CSS inlining for above-the-fold content
+
+### JavaScript Optimization
+- Minimal JavaScript footprint
+- Code splitting for large features
+- Async/defer script loading where appropriate
+
+## Accessibility Guidelines
+
+### Semantic HTML
+- Proper heading hierarchy (h1, h2, h3)
+- Semantic landmarks (header, main, section, footer)
+- ARIA labels where necessary
+
+### Keyboard Navigation
+- Focus management for carousel
+- Proper tab order throughout the page
+- Skip navigation links
+
+### Visual Accessibility
+- Sufficient color contrast ratios
+- Focus indicators for interactive elements
+- Readable font sizes across devices
+
+## Quality Assurance
+
+### Cross-browser Testing
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Android Chrome)
+- Progressive enhancement for older browsers
+
+### Responsive Testing
+- Test on actual devices when possible
+- Use browser dev tools for various screen sizes
+- Ensure touch targets are appropriately sized (44px minimum)
+
+## Implementation Priority
+
+1. **Foundation**: HTML structure, basic Tailwind setup, typography system
+2. **Core Layout**: Hero section, main content areas, basic responsive behavior
+3. **Interactive Elements**: Carousel, form interactions, button animations
+4. **Polish**: Advanced animations, micro-interactions, performance optimization
+5. **Testing**: Cross-browser testing, accessibility audit, responsive verification
+
+## Development Commands
+
+```bash
+# Install Tailwind CSS
+npm install -D tailwindcss
+
+# Initialize Tailwind config
+npx tailwindcss init
+
+# Build CSS during development
+npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch
+
+# Production build
+npx tailwindcss -i ./styles/input.css -o ./styles/output.css --minify
+```
+
+Remember: Pixel-perfect implementation is the goal. Pay attention to spacing, typography, and responsive behavior details specified in the design requirements.

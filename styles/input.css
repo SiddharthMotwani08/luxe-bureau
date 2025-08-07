@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #FBF7E5;
+    color: #50462D;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-luxe-gold text-luxe-brown font-quadrant text-xs-tight uppercase tracking-wide-10 px-6 py-3 transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-0.5;
+  }
+  
+  .btn-primary:hover {
+    animation: dissolve 300ms ease-out;
+  }
+  
+  .text-schoolbook-sm {
+    @apply font-schoolbook text-sm-tight;
+  }
+  
+  .text-schoolbook-hero {
+    @apply font-schoolbook text-hero;
+  }
+  
+  .text-century-lg {
+    @apply font-century font-medium text-xl-tight;
+  }
+  
+  .text-quadrant-lg {
+    @apply font-quadrant text-lg-tight;
+  }
+  
+  .text-abc-marfa-sm {
+    @apply font-abc-marfa text-xs-tight uppercase tracking-wide-10;
+  }
+  
+  .carousel-container {
+    @apply relative overflow-hidden;
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-3 border-b border-luxe-brown bg-transparent text-luxe-brown placeholder-luxe-brown/60 focus:outline-none focus:border-luxe-brown/80 transition-colors duration-300;
+  }
+  
+  .quote-text {
+    @apply font-quadrant text-lg-tight text-right;
+  }
+  
+  .quote-author {
+    @apply font-schoolbook text-sm-tight text-right uppercase tracking-tight-5 mt-2;
+  }
+  
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+}
