@@ -1,4 +1,7 @@
-{
+{ 
+  "engines": {
+    "node": "22.x"
+  },
   "name": "luxe-bureau-landing",
   "version": "1.0.0",
   "description": "Responsive landing page for The Luxe Bureau - a luxury gift curation service",
